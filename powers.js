@@ -10,35 +10,25 @@ const powerList = document.getElementById("powerList")
 
 
 activateFlight.addEventListener("click", function (){
-    if (flight.classList.contains("enabled")) {
-        flight.classList.remove("enabled");
-        flight.classList.add("disabled");
-    }
-    else {
-        flight.classList.remove("disabled");
-        flight.classList.add("enabled");
-    }
+    togglePower(flight);
 })
 activateMindReading.addEventListener("click", function (){
-    if (mindReading.classList.contains("enabled")) {
-        mindReading.classList.remove("enabled");
-        mindReading.classList.add("disabled");
-    }
-    else {
-        mindReading.classList.remove("disabled");
-        mindReading.classList.add("enabled");
-    }
+    togglePower(mindReading);
 })
 activateXray.addEventListener("click", function (){
-    if (xray.classList.contains("enabled")) {
-        xray.classList.remove("enabled");
-        xray.classList.add("disabled");
+    togglePower(xray);
+})
+function togglePower(element) {
+    if (element.classList.contains("enabled")) {
+        element.classList.remove("enabled");
+        element.classList.add("disabled");
     }
     else {
-        xray.classList.remove("disabled");
-        xray.classList.add("enabled");
+        element.classList.remove("disabled");
+        element.classList.add("enabled");
     }
-})
+}
+
 activateAll.addEventListener("click", function (){
     for (let i = 0; i < powerList.children.length; i++){
         if (powerList.children[i].classList.contains("disabled")){
